@@ -2753,7 +2753,10 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
             }
         }
         focus_pool = std::max( focus_pool, 0 );
+    } else if( !level.isTraining() ) {
+        level.setLastPracticed( calendar::turn );
     }
+
 
     get_skill_level_object( id ).practice();
     return level_up;

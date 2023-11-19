@@ -139,6 +139,9 @@ class SkillLevel
             _isTraining = !_isTraining;
             return _isTraining;
         }
+        void setLastPracticed( const time_point &t ) {
+            _lastPracticed = t;
+        }
 
         int level() const {
             return std::min( _level, MAX_SKILL );
